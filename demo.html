@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<title>Sub Items</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <form id="test-form">
+  <p>
+  <label for="album-title">Album Title</label>
+  <input type="text" id="album-title" name="album[title]" />
+  <p>
+  <p>
+  <label for="album-artist">Album Artist</label>
+  <input type="text" id="album-artist" name="album[artist]" />
+  <p>
+  <ul id="sub-items">
+  </ul>
+  </form>
+</body>
+<script src="./subitems.js"></script>
+<script type="text/javascript">
+  var elementstring = '<li><label for "song-%(d)-name">Song Name:</label>' +
+                      '<input type="text" id="song-%(d)-name" name="album[songs][song-%(d)]">' +
+                      '</li>';
+  readForm("test-form", elementstring, "Add Song");
+</script>
+</html>
